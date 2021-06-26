@@ -29,7 +29,7 @@ namespace WBL
         {
             try
             {
-                var result = sql.QueryAsync<TitulosEntity>("TitulosObtener");
+                var result = sql.QueryAsync<TitulosEntity>("TituloObtener");
                 return await result;
             }
             catch (Exception)
@@ -42,7 +42,7 @@ namespace WBL
         {
             try
             {
-                var result = sql.QueryFirstAsync<TitulosEntity>("TitulosObtener", new
+                var result = sql.QueryFirstAsync<TitulosEntity>("TituloObtener", new
                 {
                     entity.Id_Titulo
                 }
@@ -59,7 +59,7 @@ namespace WBL
         {
             try
             {
-                var result = sql.ExecuteAsync("TitulosInsertar", new
+                var result = sql.ExecuteAsync("TituloInsertar", new
                 {
                     entity.Descripcion,
                     entity.Estado
@@ -77,7 +77,7 @@ namespace WBL
         {
             try
             {
-                var result = sql.ExecuteAsync("TitulosActualizar", new
+                var result = sql.ExecuteAsync("TituloActualizar", new
                 {
                     entity.Id_Titulo,
                     entity.Descripcion,
@@ -96,7 +96,7 @@ namespace WBL
         {
             try
             {
-                var result = sql.ExecuteAsync("TitulosEliminar", new
+                var result = sql.ExecuteAsync("TituloEliminar", new
                 {
                     entity.Id_Titulo
                 }

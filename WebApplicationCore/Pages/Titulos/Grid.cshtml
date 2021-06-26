@@ -23,6 +23,7 @@
                                 <th>Id</th>
                                 <th>Descripción</th>
                                 <th>Estado</th>
+                                <th>Acción</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -38,7 +39,7 @@
                         </a>
 
                         <button type="button" class="btn btn-outline-primary"
-                                onclick="MarcaVehiculoGrid.OnClickEliminar(@item.Id_Titulo)">
+                                onclick="TitulosGrid.OnClickEliminar(@item.Id_Titulo)">
                             <i class='bx bx-trash'></i>
                         </button>
                     </td>
@@ -59,4 +60,11 @@
 </div>
 
 @section Scripts{
+
+    <script>
+        var MensajeApp = "@Html.Raw(Model.Mensaje)";
+    </script>
+
+    <script defer src="~/App/Titulos/Grid.js"></script>
+
 }
