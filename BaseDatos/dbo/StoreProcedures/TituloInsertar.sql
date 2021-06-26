@@ -1,0 +1,18 @@
+﻿CREATE PROCEDURE [dbo].[TituloInsertar]
+	@Descripcion VARCHAR(250),
+	@Estado BIT
+	
+AS
+	BEGIN
+		SET NOCOUNT ON
+		BEGIN TRANSACTION TRASA
+			BEGIN TRY
+				INSERT INTO Titulos (Descripcion,Estado) VALUES (@Descripcion,@Estado)
+				COMMIT TRANSACTION TRASA
+					SELECT 0 AS CodeError,'' AS MsgErr
+			END TRY
+			BEGIN CATCH
+				SELECT ERROR_NUMBER() AS CodeError, ERROR_MESSAGE() AS MsgErr
+				ROLLBACK TRANSACTION TRASA
+			END CATCH
+	END
